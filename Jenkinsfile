@@ -7,12 +7,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-               sh ' mvn install '
+               sh ' mvn -B package -DskiTests '
             }
         }
         stage('Unit Test') {
             steps {
-                 sh 'mvn test'
+                 sh 'mvn -B test'
             }
         }
     }
